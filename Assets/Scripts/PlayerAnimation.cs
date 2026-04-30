@@ -34,7 +34,10 @@ public class PlayerAnimation : MonoBehaviour
     
     public void SetGrounded(bool grounded)
     {
-        animator.SetBool(IsGroundedHash, grounded);
+        if (animator != null && animator.HasBool(IsGroundedHash))
+        {
+            animator.SetBool(IsGroundedHash, grounded);
+        }
     }
     
     public void TriggerJump()

@@ -7,43 +7,36 @@ Build/
 Builds/
 *.unityproj
 *.sln
+*.csproj
 *.user
 *.userprefs
 *.pidb
-*.booproj
-*.csproj
-*.unity
+*.pdb
 *.meta
-*.prefab
-*.asset
-*.mat
-*.anim
-*.controller
-*.physicsMaterial
-*.physicMaterial2D
-*.flare
-*.cubemap
-*.prefs
-*.mask
-*.overrideController
-*.spriteatlas
-*.asmdef
-*.asmref
 *.log
+csc.rsp
+.mdb
+*.mdb
+*.opendive
+.vs/
 
-# Visual Studio
-*.suo
-*.user
-*.userosscache
-*.sln.docstates
-
-# Rider
-.idea/
+# Compiled Binary Files
+*.exe
+*.dll
+*.so
+*.dylib
 
 # Environment
 .env
 .env.local
 .env.*
+.env~*
+
+# IDE specific
+.vscode/
+.idea/
+*.swp
+*.swo
 
 # OS generated files
 .DS_Store
@@ -62,4 +55,3 @@ desktop.ini
 *.tmp
 *.temp
 ```
-*.vsidx

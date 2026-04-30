@@ -115,7 +115,12 @@ public class PlayerController : MonoBehaviour
     {
         bool isMoving = Mathf.Abs(rb.velocity.x) > 0.1f;
         animator.SetBool("IsRunning", isMoving);
-        animator.SetBool("IsGrounded", isGrounded);
+        
+        // Проверка наличия параметра перед установкой
+        if (animator.HasBool("IsGrounded"))
+        {
+            animator.SetBool("IsGrounded", isGrounded);
+        }
     }
     
     public void TakeDamage(int damage)
