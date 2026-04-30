@@ -1,5 +1,5 @@
 ```
-# Unity specific
+# Unity-specific ignores
 Library/
 Temp/
 Obj/
@@ -11,47 +11,40 @@ Builds/
 *.user
 *.userprefs
 *.pidb
-*.pdb
+*.prefab
 *.meta
+*.cache
 *.log
-csc.rsp
-.mdb
-*.mdb
-*.opendive
-.vs/
 
-# Compiled Binary Files
-*.exe
-*.dll
-*.so
-*.dylib
+# Dependencies
+Packages/
+node_modules/
 
 # Environment
 .env
 .env.local
-.env.*
-.env~*
+*.env.*
 
-# IDE specific
-.vscode/
+# OS generated files
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Icon?
+._*
+
+# Build results
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+[Ll]ogs/
+
+# User-specific settings
+.vs/
 .idea/
 *.swp
 *.swo
 
-# OS generated files
-.DS_Store
-.DS_Store?
-._*
-.Spotlight-V100
-.Trashes
-ehthumbs.db
-Thumbs.db
-desktop.ini
-
-# Logs
-*.log
-
-# Temp files
-*.tmp
-*.temp
+# Configuration
+config/
+settings/
 ```

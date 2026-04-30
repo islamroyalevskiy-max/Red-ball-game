@@ -34,7 +34,7 @@ public class PlayerAnimation : MonoBehaviour
     
     public void SetGrounded(bool grounded)
     {
-        if (animator != null && animator.HasBool(IsGroundedHash))
+        if (animator != null)
         {
             animator.SetBool(IsGroundedHash, grounded);
         }
