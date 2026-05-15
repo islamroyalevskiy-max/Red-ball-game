@@ -87,7 +87,7 @@ public class PlayerController : MonoBehaviour
     
     private void HandleJump()
     {
-        isGrounded = groundCheckCollider != null && Physics2D.OverlapCollider(groundCheckCollider, groundLayer);
+        isGrounded = groundCheckCollider != null && Physics2D.OverlapCollider(groundCheckCollider, groundLayer, new Collider2D[1]) > 0;
         
         if (Input.GetButtonDown("Jump") && isGrounded)
         {
