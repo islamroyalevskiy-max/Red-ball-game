@@ -14,8 +14,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float jumpForce = 7f;
     
     [Header("Ground Check")]
-    [SerializeField] private Transform groundCheckPoint;
-    [SerializeField] private float groundCheckRadius = 0.2f;
+    [SerializeField] private Collider2D groundCheckCollider;
     [SerializeField] private LayerMask groundLayer;
     
     [Header("Health")]
@@ -88,7 +87,7 @@ public class PlayerController : MonoBehaviour
     
     private void HandleJump()
     {
-        isGrounded = Physics2D.OverlapCircle(groundCheckPoint.position, groundCheckRadius, groundLayer);
+        isGrounded = groundCheckCollider != null && Physics2D.OverlapCollider(groundCheckCollider, groundLayer);
         
         if (Input.GetButtonDown("Jump") && isGrounded)
         {
@@ -189,10 +188,10 @@ public class PlayerController : MonoBehaviour
     // Debug visualization
     private void OnDrawGizmosSelected()
     {
-        if (groundCheckPoint != null)
+        if (groundCheckCollider != null)
         {
             Gizmos.color = Color.red;
-            Gizmos.DrawWireSphere(groundCheckPoint.position, groundCheckRadius);
+            Gizmos.DrawWireSphere(groundCheckCollider.bounds.center, groundCheckCollider.bounds.extents.magnitude);
         }
     }
 }
