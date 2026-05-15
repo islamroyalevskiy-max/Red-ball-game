@@ -1,40 +1,55 @@
-```
-# Build artifacts
-*.dll
-*.exe
-*.pdb
-*.unitypackage
-
 # Unity specific
 Library/
 Temp/
 Obj/
 Build/
 Builds/
-Logs/
-MemoryCaptures/
-WebGLTemplates/
-Packages/manifest.json
-Packages/packages-lock.json
+*.csproj
+*.unityproj
+*.sln
+*.suo
+*.user
+*.userprefs
+*.pidb
+*.booproj
+*.svd
+*.signal
+*.meta
+!Assets/Plugins/Android/libs/arm64-v8a/libopenal.so.meta
+!Assets/Plugins/Android/libs/armeabi-v7a/libopenal.so.meta
+!Assets/Plugins/Android/libs/x86/libopenal.so.meta
+!Assets/Plugins/Android/libs/x86_64/libopenal.so.meta
 
-# System files
-.DS_Store
+# Build generated
+*.apk
+*.unitypackage
+
+# Windows
 Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
 
-# Environment
+# macOS
+.DS_Store
+
+# Linux
+*~
+
+# Environment variable files
 .env
 .env.local
-*.env.*
+.env.*
 
-# Logs
-*.log
-
-# Editor
+# IDE
 .vscode/
 .idea/
 *.swp
 *.swo
-*.tmp
+
+# Logs
+*.log
+*.err
 
 # Dependencies
 node_modules/
@@ -74,4 +89,3 @@ htmlcov/
 *.tar.bz2
 *.tar.xz
 *.tar.zst
-```

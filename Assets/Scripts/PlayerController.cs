@@ -17,6 +17,10 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Collider2D groundCheckCollider;
     [SerializeField] private LayerMask groundLayer;
     
+    // Ground check filter
+    private ContactFilter2D groundFilter;
+    private Collider2D[] groundCheckResults = new Collider2D[1];
+    
     [Header("Health")]
     [SerializeField] private int maxHealth = 3;
     
@@ -55,6 +59,12 @@ public class PlayerController : MonoBehaviour
     private void Start()
     {
         currentHealth = maxHealth;
+        
+        // Setup ground check filter
+        groundFilter = new ContactFilter2D();
+        groundFilter.layerMask = groundLayer;
+        groundFilter.useTriggers = false;
+        
         UpdateHealthUI();
     }
     
@@ -87,7 +97,7 @@ public class PlayerController : MonoBehaviour
     
     private void HandleJump()
     {
-        isGrounded = groundCheckCollider != null && Physics2D.OverlapCollider(groundCheckCollider, groundLayer, new Collider2D[1]) > 0;
+        isGrounded = groundCheckCollider != null && groundCheckCollider.OverlapCollider(groundFilter, groundCheckResults) > 0;
         
         if (Input.GetButtonDown("Jump") && isGrounded)
         {
